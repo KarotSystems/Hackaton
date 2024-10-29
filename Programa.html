@@ -4,7 +4,7 @@
     <title>Disponibilidad de Mesas</title>
     <style>
         .mesa {
-            border: 2px solid brown;
+            border: 2px solid black;
             border-radius: 10px;
             padding: 15px;
             margin: 10px;
@@ -13,14 +13,7 @@
             box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
             text-align: center;
             background-color: #f2f2f2;
-        }
-
-        .ocupada {
-            background-color: #ffcccc;
-        }
-
-        .libre {
-            background-color: #c8ffcc;
+            color: white;
         }
     </style>
 </head>
@@ -41,15 +34,18 @@
 
     <script>
         function generarMesas() {
+            const colores = ["#4a90e2", "#7ed321", "#bd10e0", "#f8e71c", "#d0021b"];
+
             const totalMesas = document.getElementById('totalMesas').value;
             const sillasPorMesa = document.getElementById('sillasPorMesa').value;
             const listaMesas = document.getElementById('listaMesas');
             
             listaMesas.innerHTML = '';
-
             for (let i = 1; i <= totalMesas; i++) {
                 const mesaDiv = document.createElement('div');
-                mesaDiv.className = 'mesa libre';
+                mesaDiv.className = 'mesa';
+                mesaDiv.style.backgroundColor = colores[(i - 1) % colores.length];
+
                 mesaDiv.innerHTML = `Mesa ${i} <br> Sillas: ${sillasPorMesa}`;
                 listaMesas.appendChild(mesaDiv);
             }
