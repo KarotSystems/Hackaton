@@ -126,16 +126,26 @@
 
         function actualizarTextoMesa(mesa) {
             const numeroMesa = mesa.getAttribute('data-numero');
-            const sillasTotales = parseInt(mesa.getAttribute('data-sillas'));
             const estado = mesa.classList.contains('ocupada') ? "Ocupada" :
                            mesa.classList.contains('bloqueada') ? "Bloqueada" : "Libre";
 
             mesa.querySelector('.texto-mesa').innerText = `Mesa ${numeroMesa} - ${estado}`;
         }
 
-        function bloquearMesa(mesa) {
-            mesa.classList.add('bloqueada');
-            mesa.classList.remove('libre', 'ocupada');
+        function bloquearMesa(mesa, boton) {
+            if (mesa.classList.contains('bloqueada')) {
+                // Si está bloqueada, desbloquea la mesa
+                mesa.classList.remove('bloqueada');
+                mesa.classList.add('libre');
+                mesa.querySelector('.input-sillas').disabled = false;
+                boton.innerText = "Bloquear";
+            } else {
+                // Bloquea la mesa y desactiva el campo de sillas
+                mesa.classList.add('bloqueada');
+                mesa.classList.remove('libre', 'ocupada');
+                mesa.querySelector('.input-sillas').disabled = true;
+                boton.innerText = "Desbloquear";
+            }
             actualizarTextoMesa(mesa);
         }
 
@@ -172,7 +182,7 @@
                 const botonBloquear = document.createElement('button');
                 botonBloquear.innerText = 'Bloquear';
                 botonBloquear.onclick = function() {
-                    bloquearMesa(mesaDiv);
+                    bloquearMesa(mesaDiv, botonBloquear);
                 };
 
                 mesaDiv.appendChild(textoMesa);
