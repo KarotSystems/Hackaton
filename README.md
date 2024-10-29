@@ -9,11 +9,8 @@
 
 ## Proyecto de Gestión de Mesas en el Area Recreativa del Campus Central
 
-En este proyecto se desarollara un sistema para poder saber si es se encuentra una mesa disponible
-en el area recreativa de la Universidad. El surigmiento de la idea, se debe a que habitualmente solemos ir en busca de espacio al arie libre para realizar tareas o pasar el tiempo en nuestros momentos de descanzo. Y no es raro observar que estas se encuentran totalmente llenas, asi que decidimos realizar un sistema, o el prototipo de uno, que permita saber si las mesas se encuentran ocupadas o no. Esto por medio de programacion en HTML y CSS. 
+En el presente proyecto se desarrolla un sistema de registro de mesas disponibles en el área recreativa de la universidad Rafael Landívar. Dicha idea surge con el fin de ayudar a los estudiantes a saber si hay mesas disponibles en el área recreativa ya sea para realizar tareas, refaccionar o juntarse a convivir con sus compañeros, las ventajas son que los estudiantes podrían ahorrarse ir al área de recreativa si ya saben con anterioridad que no hay mesas disponibles y de la misma manera puede hacer que decidan sí ir 
 
-    En este repositorio estara nuestro "codigo" en HTML, CSS y JavaScript, y al final de este documento se 
-    encontrara un enlace a la pagina desarollada. 
-
+En este repositorio se encuentra nuestro código desarrollado con el lenguaje de programación HTML 
 
 
