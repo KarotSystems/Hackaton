@@ -114,9 +114,9 @@
 
             if (mesa.classList.contains('libre')) {
                 mesa.classList.remove('libre');
-                mesa.classList.add('ocupada');
+                mesa.classList.add('apartada');
             } else {
-                mesa.classList.remove('ocupada');
+                mesa.classList.remove('apartada');
                 mesa.classList.add('libre');
                 mesa.querySelector('.input-sillas').value = '';
             }
@@ -127,24 +127,22 @@
         function actualizarTextoMesa(mesa) {
             const numeroMesa = mesa.getAttribute('data-numero');
             const estado = mesa.classList.contains('ocupada') ? "Ocupada" :
-                           mesa.classList.contains('bloqueada') ? "Bloqueada" : "Libre";
+                           mesa.classList.contains('apartada') ? "Apartada" : "Libre";
 
             mesa.querySelector('.texto-mesa').innerText = `Mesa ${numeroMesa} - ${estado}`;
         }
 
         function bloquearMesa(mesa, boton) {
-            if (mesa.classList.contains('bloqueada')) {
-                // Si está bloqueada, desbloquea la mesa
-                mesa.classList.remove('bloqueada');
+            if (mesa.classList.contains('apartada')) {
+                mesa.classList.remove('apartada');
                 mesa.classList.add('libre');
                 mesa.querySelector('.input-sillas').disabled = false;
-                boton.innerText = "Bloquear";
+                boton.innerText = "Apartar";
             } else {
-                // Bloquea la mesa y desactiva el campo de sillas
-                mesa.classList.add('bloqueada');
+                mesa.classList.add('apartada');
                 mesa.classList.remove('libre', 'ocupada');
                 mesa.querySelector('.input-sillas').disabled = true;
-                boton.innerText = "Desbloquear";
+                boton.innerText = "Liberar";
             }
             actualizarTextoMesa(mesa);
         }
@@ -180,7 +178,7 @@
                 inputSillas.placeholder = '0';
 
                 const botonBloquear = document.createElement('button');
-                botonBloquear.innerText = 'Bloquear';
+                botonBloquear.innerText = 'Apartar';
                 botonBloquear.onclick = function() {
                     bloquearMesa(mesaDiv, botonBloquear);
                 };
