@@ -17,3 +17,5 @@ En este repositorio se encuentra nuestro código desarrollado con el lenguaje de
 Al ingresar a la pagina podremos ver un menú que solicita que soloquemos la cantidad de mesas que deseamos y lo mismo sucede conn las sillas respectivas, una vez generadas las mesas podremos apartarlas, ocuparlas indicando cuantas sillas estamos utilizando y dejar las mesas libres
 
 
+#### Pagina web
+https://hackaton-snowy.vercel.app/
